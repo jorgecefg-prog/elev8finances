@@ -1,1 +1,146 @@
-<!-- Content of privacy.html goes here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Jorge &amp; Byanka Ceballos — Experior Financial Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0d1f3c;--blue:#1a3a6b;--gold:#c9a84c;--gold2:#a07010;--pale:#f0f4fb;--gray1:#f7f8fc;--gray2:#e8eef5;--gray6:#6b7a8d;--gray8:#2d3748;--white:#ffffff;--green:#1abc9c;--rad:14px;--shadow:0 4px 24px rgba(13,31,60,.1);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:#f2ede6;color:var(--gray8);font-size:15px;line-height:1.7;}
+  .site-header{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(0,0,0,.25);}
+  .logo-text{font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.01em;}
+  .logo-text span{color:var(--gold);}
+  .logo-sub{font-size:.58rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:2px;}
+  .lang-btn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:5px 14px;cursor:pointer;color:#fff;font-size:.8rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:background .2s;}
+  .lang-btn:hover{background:rgba(255,255,255,.18);}
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 65%,#2a5298 100%);padding:48px 24px 80px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-60px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(201,168,76,.08);}
+  .hero::after{content:'';position:absolute;bottom:-40px;left:-60px;width:220px;height:220px;border-radius:50%;background:rgba(201,168,76,.06);}
+  .hero-inner{position:relative;z-index:1;}
+  .hero-icon{font-size:2.6rem;margin-bottom:14px;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;color:#fff;margin-bottom:8px;}
+  .hero p{color:rgba(255,255,255,.65);font-size:.9rem;max-width:460px;margin:0 auto;}
+  .effective-tag{display:inline-block;margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:4px 14px;font-size:.7rem;color:rgba(255,255,255,.65);letter-spacing:.05em;}
+  .content-wrap{max-width:780px;margin:-28px auto 0;position:relative;z-index:2;padding:0 16px 60px;}
+  .back-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--gray2);color:var(--navy);border-radius:10px;padding:9px 16px;font-size:.82rem;font-weight:600;text-decoration:none;margin-bottom:20px;transition:all .2s;box-shadow:var(--shadow);}
+  .back-btn:hover{border-color:var(--gold);color:var(--gold2);}
+  .policy-card{background:#fff;border-radius:var(--rad);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;}
+  .policy-card-head{background:linear-gradient(90deg,var(--navy),var(--blue));padding:14px 22px;display:flex;align-items:center;gap:12px;}
+  .policy-num{width:26px;height:26px;background:var(--gold);border-radius:50%;display:grid;place-items:center;font-size:.75rem;font-weight:700;color:var(--navy);flex-shrink:0;}
+  .policy-card-head h2{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#fff;}
+  .policy-card-body{padding:20px 22px;font-size:.87rem;color:var(--gray6);}
+  .policy-card-body p{margin-bottom:12px;line-height:1.75;}
+  .policy-card-body p:last-child{margin-bottom:0;}
+  .policy-card-body ul{padding-left:18px;display:flex;flex-direction:column;gap:7px;}
+  .policy-card-body li{line-height:1.6;}
+  .policy-card-body strong{color:var(--gray8);}
+  .highlight-box{background:#f0f4fb;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:14px;font-size:.84rem;color:var(--navy);line-height:1.6;}
+  .rights-list{display:flex;flex-direction:column;gap:12px;}
+  .right-item{display:flex;align-items:flex-start;gap:12px;}
+  .right-icon{font-size:1rem;flex-shrink:0;margin-top:2px;}
+  .right-text strong{color:var(--gray8);display:block;font-size:.85rem;margin-bottom:2px;}
+  .right-text span{font-size:.82rem;color:var(--gray6);}
+  .contact-card{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:var(--rad);padding:24px;color:#fff;text-align:center;margin-bottom:16px;}
+  .contact-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+  .contact-card p{font-size:.84rem;color:rgba(255,255,255,.7);margin-bottom:14px;line-height:1.6;}
+  .contact-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .contact-link{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 16px;color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;transition:background .2s;}
+  .contact-link:hover{background:rgba(255,255,255,.22);}
+  .site-footer{background:var(--navy);text-align:center;padding:18px 24px;color:rgba(255,255,255,.45);font-size:.73rem;margin-top:8px;line-height:1.7;}
+  @media(max-width:560px){.policy-card-body{padding:16px;}.hero{padding:36px 18px 70px;}.content-wrap{padding:0 10px 48px;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="logo-text">Jorge &amp; Byanka <span>Ceballos</span></div>
+    <span class="logo-sub">Licensed Insurance Agents · Experior Financial Group</span>
+  </div>
+  <button class="lang-btn" onclick="toggleLang()">🌐 <span id="lang-label">Español</span></button>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-icon">🔒</div>
+    <h1 data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</h1>
+    <p data-en="We are committed to protecting your personal information and being transparent about how we use it." data-es="Estamos comprometidos a proteger su información personal y ser transparentes sobre cómo la utilizamos.">We are committed to protecting your personal information and being transparent about how we use it.</p>
+    <span class="effective-tag" data-en="Effective: January 1, 2025 · Last Updated: April 2026" data-es="Vigente: 1 de enero de 2025 · Última actualización: Abril 2026">Effective: January 1, 2025 · Last Updated: April 2026</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+  <a href="index.html" class="back-btn"><span data-en="← Back to Life Insurance Form" data-es="← Volver al Formulario">← Back to Life Insurance Form</span></a>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">1</div><h2 data-en="Who We Are" data-es="Quiénes Somos">Who We Are</h2></div><div class="policy-card-body"><p data-en="Jorge &amp; Byanka Ceballos are licensed insurance agents operating under Experior Financial Group. We help individuals and families find personalized life insurance, annuity, and related financial protection products." data-es="Jorge y Byanka Ceballos son agentes de seguros con licencia que operan bajo Experior Financial Group. Ayudamos a individuos y familias a encontrar seguro de vida personalizado, anualidades y productos relacionados de protección financiera.">Jorge &amp; Byanka Ceballos are licensed insurance agents operating under Experior Financial Group. We help individuals and families find personalized life insurance, annuity, and related financial protection products.</p><p data-en="This Privacy Policy explains what information we collect, how we use it, who we share it with, and your rights regarding your personal data." data-es="Esta Política de Privacidad explica qué información recopilamos, cómo la usamos, con quién la compartimos y sus derechos sobre sus datos personales.">This Privacy Policy explains what information we collect, how we use it, who we share it with, and your rights regarding your personal data.</p></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">2</div><h2 data-en="Information We Collect" data-es="Información que Recopilamos">Information We Collect</h2></div><div class="policy-card-body"><p data-en="We collect information you voluntarily provide through our life insurance quote and intake form, including:" data-es="Recopilamos información que usted proporciona voluntariamente a través de nuestro formulario, incluyendo:">We collect information you voluntarily provide through our life insurance quote and intake form, including:</p><ul><li data-en="Full legal name, date of birth, gender, and Social Security Number (SSN)" data-es="Nombre legal completo, fecha de nacimiento, género y Número de Seguro Social (SSN)">Full legal name, date of birth, gender, and Social Security Number (SSN)</li><li data-en="Contact information — email, phone number, and home address" data-es="Información de contacto — correo electrónico, número de teléfono y dirección">Contact information — email, phone number, and home address</li><li data-en="Health history, current medications, and medical conditions" data-es="Historial de salud, medicamentos actuales y condiciones médicas">Health history, current medications, and medical conditions</li><li data-en="Lifestyle information — tobacco use, occupation, and income" data-es="Información de estilo de vida — uso de tabaco, ocupación e ingresos">Lifestyle information — tobacco use, occupation, and income</li><li data-en="Beneficiary information — names, relationships, dates of birth" data-es="Información del beneficiario — nombres, parentescos, fechas de nacimiento">Beneficiary information — names, relationships, dates of birth</li><li data-en="Bank account details for premium payment setup (routing and account numbers)" data-es="Datos bancarios para configuración de pago de prima (números de ruta y cuenta)">Bank account details for premium payment setup (routing and account numbers)</li><li data-en="Electronic signature and authorization" data-es="Firma electrónica y autorización">Electronic signature and authorization</li><li data-en="Criminal history disclosure as required for underwriting" data-es="Declaración de antecedentes penales según sea necesario para suscripción">Criminal history disclosure as required for underwriting</li></ul></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">3</div><h2 data-en="How We Use Your Information" data-es="Cómo Usamos Su Información">How We Use Your Information</h2></div><div class="policy-card-body"><ul><li data-en="To prepare personalized life insurance quotes and present plan options" data-es="Para preparar cotizaciones personalizadas de seguro de vida y presentar opciones de plan">To prepare personalized life insurance quotes and present plan options</li><li data-en="To contact you by phone, text, or email about your insurance inquiry" data-es="Para contactarle por teléfono, texto o correo sobre su consulta de seguros">To contact you by phone, text, or email about your insurance inquiry</li><li data-en="To submit life insurance applications to carriers on your behalf with your consent" data-es="Para enviar solicitudes de seguro de vida a aseguradoras en su nombre con su consentimiento">To submit life insurance applications to carriers on your behalf with your consent</li><li data-en="To process premium payments via your chosen payment method" data-es="Para procesar pagos de prima a través del método de pago elegido">To process premium payments via your chosen payment method</li><li data-en="To follow up on related products such as annuities or will and trust services if you expressed interest" data-es="Para dar seguimiento a productos relacionados si expresó interés">To follow up on related products such as annuities or will and trust services if you expressed interest</li><li data-en="To comply with applicable insurance regulations and legal requirements" data-es="Para cumplir con las regulaciones de seguros y requisitos legales aplicables">To comply with applicable insurance regulations and legal requirements</li></ul></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">4</div><h2 data-en="How We Share Your Information" data-es="Cómo Compartimos Su Información">How We Share Your Information</h2></div><div class="policy-card-body"><div class="highlight-box"><strong data-en="We do not sell your personal information to third parties — ever." data-es="Nunca vendemos su información personal a terceros.">We do not sell your personal information to third parties — ever.</strong></div><p data-en="We may share your information only with:" data-es="Solo podemos compartir su información con:">We may share your information only with:</p><ul><li data-en="Life insurance carriers — to obtain quotes or process applications you authorize" data-es="Aseguradoras de vida — para obtener cotizaciones o procesar solicitudes autorizadas"><strong>Life insurance carriers</strong> — to obtain quotes or process applications you authorize</li><li data-en="Experior Financial Group — our IMO providing licensing and compliance oversight" data-es="Experior Financial Group — nuestra IMO que proporciona supervisión de licencias y cumplimiento"><strong>Experior Financial Group</strong> — our IMO providing licensing and compliance oversight</li><li data-en="Formspree — our secure form submission processor" data-es="Formspree — nuestro procesador seguro de formularios"><strong>Formspree</strong> — our secure form submission processor</li><li data-en="Legal authorities — when required by law or court order" data-es="Autoridades legales — cuando lo exija la ley o una orden judicial"><strong>Legal authorities</strong> — when required by law or court order</li></ul></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">5</div><h2 data-en="TCPA &amp; Communications Consent" data-es="Consentimiento TCPA y de Comunicaciones">TCPA &amp; Communications Consent</h2></div><div class="policy-card-body"><p data-en="By submitting our form and checking the TCPA consent box, you expressly authorize Jorge &amp; Byanka Ceballos / Experior Financial Group to contact you using automated dialing systems, prerecorded or AI-generated voice messages, and SMS/MMS text messages." data-es="Al enviar nuestro formulario y marcar la casilla TCPA, autoriza expresamente a Jorge y Byanka Ceballos / Experior Financial Group a contactarle mediante sistemas de marcación automática, mensajes de voz pregrabados o generados por IA, y mensajes SMS/MMS.">By submitting our form and checking the TCPA consent box, you expressly authorize Jorge &amp; Byanka Ceballos / Experior Financial Group to contact you using automated dialing systems, prerecorded or AI-generated voice messages, and SMS/MMS text messages.</p><p data-en="Consent is not required as a condition of purchasing insurance. Reply STOP to any text message to opt out." data-es="El consentimiento no es un requisito para comprar un seguro. Responda STOP a cualquier mensaje de texto para cancelar.">Consent is not required as a condition of purchasing insurance. Reply STOP to any text message to opt out.</p></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">6</div><h2 data-en="Data Security" data-es="Seguridad de Datos">Data Security</h2></div><div class="policy-card-body"><p data-en="All information submitted through our form is transmitted over SSL/TLS encryption (HTTPS). Social Security Numbers are masked visually and transmitted only over encrypted connections. Bank account and routing numbers are stored securely by our form processor and never stored on our own servers." data-es="Toda la información enviada a través de nuestro formulario se transmite mediante cifrado SSL/TLS (HTTPS). Los Números de Seguro Social se enmascaran visualmente. Los números de cuenta bancaria y de ruta son almacenados de forma segura por nuestro procesador de formularios y nunca en nuestros propios servidores.">All information submitted through our form is transmitted over SSL/TLS encryption (HTTPS). Social Security Numbers are masked visually and transmitted only over encrypted connections. Bank account and routing numbers are stored securely by our form processor and never stored on our own servers.</p></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">7</div><h2 data-en="Data Retention" data-es="Retención de Datos">Data Retention</h2></div><div class="policy-card-body"><p data-en="We retain your personal information for as long as necessary to provide our services and comply with legal obligations. TCPA consent records are retained for a minimum of 5 years as required by law." data-es="Conservamos su información personal durante el tiempo necesario para prestar nuestros servicios y cumplir con obligaciones legales. Los registros de consentimiento TCPA se conservan por un mínimo de 5 años según lo exige la ley.">We retain your personal information for as long as necessary to provide our services and comply with legal obligations. TCPA consent records are retained for a minimum of 5 years as required by law.</p></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">8</div><h2 data-en="Your Rights" data-es="Sus Derechos">Your Rights</h2></div><div class="policy-card-body"><div class="rights-list"><div class="right-item"><span class="right-icon">👁️</span><div class="right-text"><strong data-en="Access" data-es="Acceso">Access</strong><span data-en="Request a copy of the personal information we hold about you." data-es="Solicitar una copia de la información personal que tenemos sobre usted.">Request a copy of the personal information we hold about you.</span></div></div><div class="right-item"><span class="right-icon">✏️</span><div class="right-text"><strong data-en="Correction" data-es="Corrección">Correction</strong><span data-en="Request that we correct any inaccurate or incomplete information." data-es="Solicitar que corrijamos cualquier información inexacta o incompleta.">Request that we correct any inaccurate or incomplete information.</span></div></div><div class="right-item"><span class="right-icon">🗑️</span><div class="right-text"><strong data-en="Deletion" data-es="Eliminación">Deletion</strong><span data-en="Request deletion of your personal data, subject to legal retention requirements." data-es="Solicitar la eliminación de sus datos personales, sujeto a requisitos legales de retención.">Request deletion of your personal data, subject to legal retention requirements.</span></div></div><div class="right-item"><span class="right-icon">🚫</span><div class="right-text"><strong data-en="Opt-Out" data-es="Cancelar">Opt-Out</strong><span data-en="Reply STOP to any SMS or contact us directly to stop all marketing communications." data-es="Responda STOP a cualquier SMS o contáctenos para detener todas las comunicaciones de marketing.">Reply STOP to any SMS or contact us directly to stop all marketing communications.</span></div></div></div></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">9</div><h2 data-en="Cookies &amp; Tracking" data-es="Cookies y Rastreo">Cookies &amp; Tracking</h2></div><div class="policy-card-body"><p data-en="Our website uses minimal session data to maintain form state. We do not use advertising tracking pixels, retargeting cookies, or third-party analytics. The UserWay accessibility widget may collect anonymized usage data for accessibility improvement purposes only." data-es="Nuestro sitio web usa datos de sesión mínimos para mantener el estado del formulario. No usamos píxeles de rastreo publicitario, cookies de retargeting ni análisis de terceros. El widget de accesibilidad UserWay puede recopilar datos de uso anónimos solo con fines de mejora de accesibilidad.">Our website uses minimal session data to maintain form state. We do not use advertising tracking pixels, retargeting cookies, or third-party analytics. The UserWay accessibility widget may collect anonymized usage data for accessibility improvement purposes only.</p></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">10</div><h2 data-en="Children's Privacy" data-es="Privacidad de Menores">Children's Privacy</h2></div><div class="policy-card-body"><p data-en="Our services are intended for adults 18 years and older. We do not knowingly collect personal information from children under 18. Dependent or beneficiary information involving minors is provided by the adult applicant solely for insurance underwriting purposes." data-es="Nuestros servicios están destinados a personas mayores de 18 años. No recopilamos intencionalmente información personal de menores de 18 años. La información de dependientes o beneficiarios que involucre menores es proporcionada por el solicitante adulto únicamente con fines de suscripción de seguros.">Our services are intended for adults 18 years and older. We do not knowingly collect personal information from children under 18. Dependent or beneficiary information involving minors is provided by the adult applicant solely for insurance underwriting purposes.</p><p data-en="We may collect children's information solely for policy purposes — including juvenile life insurance policies — only with the express written consent of a parent or legal guardian. Such information is used exclusively for underwriting and policy administration and is never shared for marketing purposes." data-es="Podemos recopilar información de menores únicamente con fines de póliza — incluyendo pólizas de seguro de vida juvenil — solo con el consentimiento expreso y por escrito de un padre o tutor legal. Dicha información se utiliza exclusivamente para la suscripción y administración de pólizas y nunca se comparte con fines de marketing.">We may collect children's information solely for policy purposes — including juvenile life insurance policies — only with the express written consent of a parent or legal guardian. Such information is used exclusively for underwriting and policy administration and is never shared for marketing purposes.</p></div></div>
+
+  <div class="policy-card"><div class="policy-card-head"><div class="policy-num">11</div><h2 data-en="Changes to This Policy" data-es="Cambios a Esta Política">Changes to This Policy</h2></div><div class="policy-card-body"><p data-en="We may update this Privacy Policy periodically. When we do, we will update the effective date at the top of this page. Continued use of our form after changes constitutes your acceptance of the updated policy." data-es="Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo hagamos, actualizaremos la fecha de vigencia en la parte superior de esta página. El uso continuo de nuestro formulario después de los cambios constituye su aceptación de la política actualizada.">We may update this Privacy Policy periodically. When we do, we will update the effective date at the top of this page. Continued use of our form after changes constitutes your acceptance of the updated policy.</p></div></div>
+
+  <div class="contact-card">
+    <h3 data-en="Questions About This Policy?" data-es="¿Preguntas Sobre Esta Política?">Questions About This Policy?</h3>
+    <p data-en="Reach out to Jorge or Byanka directly — we're happy to help." data-es="Contáctese directamente con Jorge o Byanka — con gusto le ayudamos.">Reach out to Jorge or Byanka directly — we're happy to help.</p>
+    <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:4px;">
+      <!-- Jorge -->
+      <div style="text-align:center;">
+        <p style="font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Jorge Ceballos</p>
+        <div class="contact-links" style="flex-direction:column;gap:7px;">
+          <a href="sms:+15592595500" class="contact-link">📱 (559) 259-5500</a>
+          <a href="mailto:Jorgec.efg@gmail.com" class="contact-link">✉️ Jorgec.efg@gmail.com</a>
+        </div>
+      </div>
+      <!-- Byanka -->
+      <div style="text-align:center;">
+        <p style="font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Byanka Ceballos</p>
+        <div class="contact-links" style="flex-direction:column;gap:7px;">
+          <a href="sms:+15594772578" class="contact-link">📱 (559) 477-2578</a>
+          <a href="mailto:Ceballosbyanka@gmail.com" class="contact-link">✉️ Ceballosbyanka@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn"><span data-en="← Back to Life Insurance Form" data-es="← Volver al Formulario">← Back to Life Insurance Form</span></a>
+</div>
+
+<footer class="site-footer">
+  <p>© 2025 Jorge &amp; Byanka Ceballos · Experior Financial Group</p>
+  <p style="margin-top:4px;opacity:.6;font-size:.68rem" data-en="This policy applies to information collected through our life insurance intake form only. Licensed Insurance Agents." data-es="Esta política aplica únicamente a la información recopilada a través de nuestro formulario de seguro de vida.">This policy applies to information collected through our life insurance intake form only.</p>
+</footer>
+
+<script>
+let lang = 'en';
+function toggleLang() {
+  lang = lang === 'en' ? 'es' : 'en';
+  document.getElementById('lang-label').textContent = lang === 'en' ? 'Español' : 'English';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (el.tagName === 'INPUT') return;
+    const val = el.getAttribute('data-' + lang);
+    if (!val) return;
+    if (el.children.length > 0) {
+      const tn = Array.from(el.childNodes).find(n => n.nodeType === 3 && n.textContent.trim());
+      if (tn) tn.textContent = val;
+    } else { el.textContent = val; }
+  });
+}
+</script>
+</body>
+</html>
