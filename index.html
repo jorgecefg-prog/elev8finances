@@ -1634,6 +1634,24 @@
           <input type="hidden" name="Policy Type" id="hidden-policy-type" value="Term Life" />
         </div>
 
+        <!-- HEALTH INSURANCE COVERAGE STATUS -->
+        <div class="section-divider"><span>🏥 Coverage / Current Status</span></div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>Do you currently have health insurance coverage?</label>
+          <div class="radio-row" style="max-width:200px;">
+            <input type="radio" name="Has Health Insurance" id="hi-yes" value="Yes" onclick="document.getElementById('hi-provider-wrap').style.display='block'">
+            <label class="radio-label" for="hi-yes">Yes</label>
+            <input type="radio" name="Has Health Insurance" id="hi-no" value="No" onclick="document.getElementById('hi-provider-wrap').style.display='none'">
+            <label class="radio-label" for="hi-no">No</label>
+          </div>
+        </div>
+        <div id="hi-provider-wrap" style="display:none; margin-bottom:20px;">
+          <div class="field">
+            <label>Provider / Plan Name <span style="font-size:11px; color:var(--muted); text-transform:none; font-weight:400;">(optional)</span></label>
+            <input type="text" name="Health Insurance Provider" placeholder="e.g. Blue Cross Blue Shield PPO" />
+          </div>
+        </div>
+
         <div class="section-divider"><span data-en="Coverage Amount" data-es="Monto de Cobertura">Coverage Amount</span></div>
 
         <div class="field">
@@ -2003,6 +2021,11 @@
           <div class="field"><label>How long at this address?</label><input type="text" name="App Time at Address" placeholder="3 years"/></div>
         </div>
 
+        <div class="field-group">
+          <div class="field"><label>Driver's License Number</label><input type="text" name="App Drivers License Number" placeholder="e.g. D1234567" /></div>
+          <div class="field"><label>Driver's License State</label><input type="text" name="App Drivers License State" placeholder="e.g. CA" maxlength="2" style="text-transform:uppercase" /></div>
+        </div>
+
         <!-- SECTION B: EMPLOYMENT -->
         <div class="sub-section-head"><div class="sub-section-icon">💼</div><h3 data-en="Employment &amp; Finances" data-es="Empleo y Finanzas">Employment &amp; Finances</h3></div>
         <div class="section-divider"><span data-en="Employment Information" data-es="Información de Empleo">Employment Information</span></div>
@@ -2036,6 +2059,37 @@
         </div>
         <div class="field-group full">
           <div class="field"><label>Medical Conditions</label><input type="text" name="App Medical Conditions" placeholder="None / List conditions"/></div>
+        </div>
+
+        <!-- SECTION: EXISTING COVERAGE -->
+        <div class="sub-section-head"><div class="sub-section-icon">📊</div><h3>Existing Coverage</h3></div>
+        <div class="section-divider"><span>Existing Life Insurance</span></div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>Do you currently have any life insurance?</label>
+          <div class="radio-row" style="max-width:200px;">
+            <input type="radio" name="Has Existing Life Insurance" id="eli-yes" value="Yes" onclick="document.getElementById('eli-fields').style.display='block'">
+            <label class="radio-label" for="eli-yes">Yes</label>
+            <input type="radio" name="Has Existing Life Insurance" id="eli-no" value="No" onclick="document.getElementById('eli-fields').style.display='none'">
+            <label class="radio-label" for="eli-no">No</label>
+          </div>
+        </div>
+        <div id="eli-fields" style="display:none; background:var(--cream); border:1px solid var(--cream-dark); border-radius:12px; padding:16px; margin-bottom:20px;">
+          <div class="field-group triple">
+            <div class="field"><label>Carrier Name</label><input type="text" name="Existing Life Carrier" placeholder="e.g. Prudential" /></div>
+            <div class="field"><label>Coverage Amount</label><input type="text" name="Existing Life Coverage Amount" placeholder="e.g. $250,000" /></div>
+            <div class="field">
+              <label>Policy Type</label>
+              <div class="select-wrap">
+                <select name="Existing Life Policy Type">
+                  <option value="">Select...</option>
+                  <option>Term</option>
+                  <option>Whole</option>
+                  <option>IUL</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- SECTION D: BENEFICIARY -->
@@ -2222,11 +2276,98 @@
           </div>
 
           <div class="health-q-row">
-            <p class="health-q-text" data-en="Member of armed forces?" data-es="¿Miembro de las fuerzas armadas?">Member of armed forces?</p>
+            <p class="health-q-text">Member of armed forces?</p>
             <div class="radio-row" style="flex:0; min-width:100px;">
               <input type="radio" name="HQ Military" id="hq9y" value="Yes"><label class="radio-label" for="hq9y" data-en="Yes" data-es="Sí">Yes</label>
               <input type="radio" name="HQ Military" id="hq9n" value="No"><label class="radio-label" for="hq9n" data-en="No" data-es="No">No</label>
             </div>
+          </div>
+
+          <!-- WEIGHT CHANGE -->
+          <div class="health-q-row">
+            <p class="health-q-text">Have you gained or lost weight in the past 12 months?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Weight Change" id="hqwcy" value="Yes" onclick="document.getElementById('hq-weight-explain').style.display='block'">
+              <label class="radio-label" for="hqwcy">Yes</label>
+              <input type="radio" name="HQ Weight Change" id="hqwcn" value="No" onclick="document.getElementById('hq-weight-explain').style.display='none'">
+              <label class="radio-label" for="hqwcn">No</label>
+            </div>
+          </div>
+          <div id="hq-weight-explain" style="display:none; padding:0 0 4px 0;">
+            <input type="text" name="HQ Weight Change Explain" placeholder="Explain (optional)" style="max-width:420px;" />
+          </div>
+
+          <!-- DISABILITY / WORKERS COMP -->
+          <div class="health-q-row">
+            <p class="health-q-text">Within the past 5 years have you worked less than full time, received or applied for disability, or worker's compensation?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Disability" id="hqdisy" value="Yes"><label class="radio-label" for="hqdisy">Yes</label>
+              <input type="radio" name="HQ Disability" id="hqdisn" value="No"><label class="radio-label" for="hqdisn">No</label>
+            </div>
+          </div>
+
+          <!-- TOBACCO / NICOTINE (detailed) -->
+          <div class="health-q-row">
+            <p class="health-q-text">Within the last 5 years have you used any tobacco or nicotine products (including cigarettes, vape, cigars, chewing tobacco, nicotine gum/patch)?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Nicotine 5yr" id="hqnic5y" value="Yes"><label class="radio-label" for="hqnic5y">Yes</label>
+              <input type="radio" name="HQ Nicotine 5yr" id="hqnic5n" value="No"><label class="radio-label" for="hqnic5n">No</label>
+            </div>
+          </div>
+
+          <!-- MOVING VIOLATIONS / DUI -->
+          <div class="health-q-row">
+            <p class="health-q-text">During the last 5 years have you been convicted of any moving violations, DUI, or had a suspended license?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ DUI" id="hqduiy" value="Yes"><label class="radio-label" for="hqduiy">Yes</label>
+              <input type="radio" name="HQ DUI" id="hqduin" value="No"><label class="radio-label" for="hqduin">No</label>
+            </div>
+          </div>
+
+          <!-- FELONY / MISDEMEANOR -->
+          <div class="health-q-row">
+            <p class="health-q-text">Within the past 10 years, have you been convicted of or charged with a felony or misdemeanor, or are you currently on parole or probation?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Felony" id="hqfely" value="Yes"><label class="radio-label" for="hqfely">Yes</label>
+              <input type="radio" name="HQ Felony" id="hqfeln" value="No"><label class="radio-label" for="hqfeln">No</label>
+            </div>
+          </div>
+
+          <!-- HEART CONDITION -->
+          <div class="health-q-row">
+            <p class="health-q-text">Any disorder or abnormal condition of the heart (including irregular heartbeat, murmur, coronary artery disease, heart attack, chest pain, angina, high blood pressure, or high cholesterol)?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Heart Condition" id="hqheary" value="Yes"><label class="radio-label" for="hqheary">Yes</label>
+              <input type="radio" name="HQ Heart Condition" id="hqhearn" value="No"><label class="radio-label" for="hqhearn">No</label>
+            </div>
+          </div>
+
+          <!-- PENDING APPOINTMENTS -->
+          <div class="health-q-row">
+            <p class="health-q-text">Do you have any pending appointments with a healthcare provider or medical facility?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Pending Appointment" id="hqappty" value="Yes" onclick="document.getElementById('hq-appt-explain').style.display='block'">
+              <label class="radio-label" for="hqappty">Yes</label>
+              <input type="radio" name="HQ Pending Appointment" id="hqapptn" value="No" onclick="document.getElementById('hq-appt-explain').style.display='none'">
+              <label class="radio-label" for="hqapptn">No</label>
+            </div>
+          </div>
+          <div id="hq-appt-explain" style="display:none; padding:0 0 4px 0;">
+            <input type="text" name="HQ Pending Appointment Explain" placeholder="Explain (optional)" style="max-width:420px;" />
+          </div>
+
+          <!-- PRESCRIPTION MEDICATIONS -->
+          <div class="health-q-row">
+            <p class="health-q-text">Are you currently taking or have taken within the last 12 months any prescription medications, over-the-counter drugs, aspirin, or herbal supplements?</p>
+            <div class="radio-row" style="flex:0; min-width:100px;">
+              <input type="radio" name="HQ Prescriptions" id="hqrxy" value="Yes" onclick="document.getElementById('hq-rx-list').style.display='block'">
+              <label class="radio-label" for="hqrxy">Yes</label>
+              <input type="radio" name="HQ Prescriptions" id="hqrxn" value="No" onclick="document.getElementById('hq-rx-list').style.display='none'">
+              <label class="radio-label" for="hqrxn">No</label>
+            </div>
+          </div>
+          <div id="hq-rx-list" style="display:none; padding:0 0 4px 0;">
+            <input type="text" name="HQ Prescriptions List" placeholder="List medications" style="max-width:420px;" />
           </div>
 
         </div>
